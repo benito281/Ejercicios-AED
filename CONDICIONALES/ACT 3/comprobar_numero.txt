@@ -1,0 +1,9 @@
+Escriba un algoritmo que acepte un número entero mayor a 100 y menor a 1000, 
+y muestre como está compuesto (unidades, decenas y centenas) y si es múltiplo de 3 (Recordar: todo número cuya suma de sus dígitos sea múltiplo de 3, lo es también).
+
+Accion 1.1.12 Es
+  Ambiente
+    unidad,decena,centena,numero: Entero;
+Proceso
+    
+Fin accion.

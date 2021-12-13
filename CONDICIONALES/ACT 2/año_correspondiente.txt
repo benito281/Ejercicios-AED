@@ -1,0 +1,21 @@
+
+Dado un año ingresado por el usuario, 
+emitir el mensaje 'ACTUAL' si corresponde al año en curso, 'PASADO' si es menor y 'FUTURO' si es mayor.
+
+Accion 1.1.11 Es
+  Ambiente
+    anio: Entero;
+Proceso
+    Escribir('Comprobar si el año ingresado es el que esta en curso');
+    Leer(anio);
+    Si (anio > 2021) entonces
+        Escribir('FUTURO');
+    Fin si
+    Si (anio < 2021) entonces
+        Escribir('PASADO');
+    Si No
+        Si (anio = 2021) entonces
+            Escribir('ACTUAL');
+        Fin si    
+    Fin si
+Fin accion.
