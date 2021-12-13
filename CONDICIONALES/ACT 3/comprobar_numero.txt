@@ -5,5 +5,22 @@ Accion 1.1.12 Es
   Ambiente
     unidad,decena,centena,numero: Entero;
 Proceso
-    
+    Escribir('Ingrese un numero y vea como esta compuesto');
+    Leer(numero);
+
+    Si (numero > 100 y numero < 1000) entonces
+      centena := numero DIV 100;
+      decena := TRUNC(numero / 10) MOD 10;
+      unidad := numero MOD 10;
+      Escribir('El numero esta compuesto por ', centena, ' de 100, por ', decena, ' de 10 y ', unidad, ' de 1');
+
+    Si No
+      Escribir('Vuelva a ingresar otro numero que sea mayor a 100 y menor a 100');
+    Fin si
+
+    Si (numero MOD 3 = 0) entonces
+        Escribir('El numero ingresado es multiplo de 3');
+    Si No
+      Escribir('El numero ingresado no es multiplo de 3');
+    Fin si
 Fin accion.

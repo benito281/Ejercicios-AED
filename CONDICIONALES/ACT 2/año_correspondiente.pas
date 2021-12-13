@@ -11,17 +11,17 @@ begin
         begin
             writeln('FUTURO');
         end;
-        if (anio < 2021) then
-            begin
-               writeln('PASADO'); 
-            end
-        else
-            begin
-                if (anio = 2021) then
-                    begin
-                        writeln('ACTUAL');
-                    end
-            end;
+    if (anio < 2021) then
+        begin
+            writeln('PASADO'); 
+        end
+    else
+        begin
+            if (anio = 2021) then
+                begin
+                    writeln('ACTUAL');
+                end
+        end;
 
   readkey;
 end.
