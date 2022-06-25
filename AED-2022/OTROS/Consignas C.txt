@@ -1,0 +1,18 @@
+Consigna por cada sector:
+
+
+Escuelas que negaron y aceptaron la solicitud de charlas
+
+Universidades que rechazaron charlas y testeos
+
+Provincias, pais, localidadg
+cantidad de provincias que aceptaron la charla
+
+========================================================================
+
+El Programa Conjunto de las Naciones Unidas sobre el VIH/sida es un programa de las Naciones Unidas destinado a coordinar las actividades de los distintos organismos especializados de la ONU en su lucha contra el sida. Actualmente se encuentran trabajando en África oriental y meridional, África occidental y central, Asia y el Pacífico, América Latina y el Caribe, Oriente Medio y África septentrional, Europa O. y C, América del N.
+
+1) Se necesita saber la cantidad de personas que quedaron sin recibir tratamiento de las 8 REGIONES, para, mediante estragias lograr que las personas reciban dicho tratamiento contra el VIH.
+a) Visulizar los datos de las personas DNI, APELLIDO Y NOMBRE, EDAD, SEXO, REGION, TRATAMIENTO. Ordenado por rango de edades.
+
+=======================================================================

@@ -1,0 +1,79 @@
+/*====================================================
+=                      Desafio 1                     =
+====================================================*/
+En un negocio se venden distintos artículos identificados por un código:
+
+   ARTÍCULO 1:  vale $100.- la unidad
+   ARTÍCULO 2: vale $70.- la unidad. La caja de 10 unidades vale 65
+   ARTÍCULO 3: vale $30 la unidad. Si la compra es por más de 10 unidades se hace un descuento de 10% sobre la compra.
+
+Se pide: escribir un algoritmo que muestre por pantalla:
+
+-        Nombre del cliente
+-        Código del artículo
+-        Importe de la compra (xxxx.xx pesos)
+
+a)      Cuales son los datos de entrada que se necesitan?
+b)     Escriba el algoritmo
+
+ACCION NombreDePrograma ES
+	AMBIENTE
+	nombreDelCliente,codArticulo : caracter;
+	cantidad,unidades : entero;
+	importe : real;
+
+	articulo1 = '001'; articulo2 = '002', articulo3 = '003';
+
+PROCESO
+	ESCRIBIR('Ingrese el o los codigos de articulos, y vea el importe total de la compra');
+	ESCRIBIR('Introduzca el nombre del cliente');
+	LEER(nombreDelCliente);
+	ESCRIBIR('Ingrese la cantidad de articulos. Debe introducir un numero del 1 al 3');
+	LEER(cantidad);
+	SI (cantidad = 0) o (cantidad > 3) ENTONCES
+		ESCRIBIR('La cantidad de articulos no puede ser menor a 1 o mayor a 3')
+	CONTRARIO
+		ESCRIBIR('Nombre y codigos de articulos');
+		ESCRIBIR(' ');
+		ESCRIBIR('* Arroz = 001');
+		ESCRIBIR('* Harina = 002');
+		ESCRIBIR('* Leche = 003');
+
+		SI (cantidad = 1) ENTONCES
+			ESCRIBIR('Introduzca el codigo del articulo')
+			LEER(codArticulo)
+			ESCRIBIR('Ingrese cuantas unidades tiene')
+			LEER(unidades)
+			SI (codArticulo = articulo1) ENTONCES
+				ESCRIBIR('Producto				Precio')
+				ESCRIBIR('Arroz					 $100 ')
+				importe := 100 * unidades
+			FIN_SI;
+		FIN_SI;
+		SI condicion_se_cumple ENTONCES
+			ACCIÓN_1
+			ACCIÓN_2
+			….
+			ACCIÓN_N
+		FIN_SI;
+		SI condicion_se_cumple ENTONCES
+			ACCIÓN_1
+			ACCIÓN_2
+			….
+			ACCIÓN_N
+		FIN_SI;
+	FIN_SI;
+
+FIN_ACCION
+
+/*===============  End of Desafio 1  ================*/
+
+
+/*====================================================
+=                      Desafio 2                     =
+====================================================*/
+
+
+
+/*===============  End of Desafio 2  ================*/
+

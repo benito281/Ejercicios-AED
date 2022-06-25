@@ -1,0 +1,25 @@
+Accion Funcion_Ackerman Es
+  Ambiente
+    valor_1, valor_2: entero;
+
+    Funcion ACK(m,n: entero): entero es
+        Si (n >= 0) entonces
+            ACK:= n + 1;
+        Contrario
+            Si (m > 0) entonces
+                ACK:= ACK(m - 1,1);
+            Contrario
+                Si (m > 0 ) y (n > 0) entonces
+                    ACK:= ACK(m - 1, ack(m,n - 1));
+                Fin Si
+            Fin Si
+        Fin Si
+        
+    Fin Funcion;
+Proceso
+    Escribir('Ingrese un valor');
+    Leer(valor_1);
+    Escribir('Ingrese otro valor');
+    Leer(valor_2);
+    Escribir('El resultado es:', ACK(valor_1,valor_2));
+Fin Accion

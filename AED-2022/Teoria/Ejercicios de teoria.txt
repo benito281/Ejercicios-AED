@@ -1,0 +1,39 @@
+//Permitir el ingreso de una clave y pedir su ingreso en caso de ser incorrecta
+
+Accion verificar_clave es
+  Ambiente
+	clave,ingreso: caracter;
+	intento: entero;
+Proceso
+intento := 0;
+Repetir
+  Escribir('Ingrese una clave hasta que sea correcta');
+  Leer( ingreso );
+  intento := intento + 1;
+hasta ( ingreso = clave) o ( intento >= 3) que;
+Si ( intento >= 3 ) entonces
+	Escribir('Intente ingresar de nuevo la clave');
+Si no
+	Escribir('Felicidades crack, ingreso exitoso 😁');
+Fin_si
+
+Fin_accion.
+
+-----------------------------------------------------------------------------------------
+
+Accion ingreso_temperatura es
+  Ambiente
+    personasEnCola,contador: entero;
+Proceso
+    Repetir
+      Escribir('Permite saber cuantas personas quedaron fueras');
+      Leer( personasEnCola );
+      Si personasEnCola > 10 entonces
+        Escribir('Vuelva a in');
+        Leer( personasEnCola );
+      Si no
+        OTRAS_ACCIONES
+      Fin si
+      Escribir('Ingrese la temperatura de las personas');
+    hasta ( personasEnCola = 10 ) que;
+Fin_accion.

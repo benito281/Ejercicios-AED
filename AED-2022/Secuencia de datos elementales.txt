@@ -1,0 +1,77 @@
+Dada una secuencia de letras del alfabeto que finaliza con una marca '*',
+ contar cuantas letras "A" hay en la secuencia.
+
+ Accion ejercicio 2.1.1 es
+     Ambiente
+         sec  : secuencia de caracteres;
+         v    : caracter;
+         cont :  entero;
+ Proceso
+     Arr(sec);
+     cont := 0;
+     Avz(sec,v);
+     Mientras (v <> '*') hacer
+         Si (v = 'A') entonces
+             cont := cont + 1;
+         Fin_si;
+         Avz(sec,v);
+     Fin_mientras;
+    Escribir('La cantidad de letras A ', cont);
+    Cerrar(sec);
+ Fin_accion.
+
+ ---------------------------------------------------------------------------------------
+ Dada una secuencia de letras del alfabeto que finaliza con la letra "Z",
+  contar cuantas consonantes hay en la secuencia.
+
+Accion ejercicio 2.1.2 es
+    Ambiente
+        sec  : secuencia de caracteres;
+        v    : caracter;
+        cont : entero;
+        vocal = ('a','e','i','o','u');
+Proceso
+    Arr(sec);       
+    cont := 0;
+    Repetir
+        Avz(sec,v);
+        Si (v no en vocal) entonces
+            cont := cont + 1
+        Fin_si;
+    hasta (v = 'Z') que;
+    Escribir('La cantidad de consonantes que hay es ', cont);
+    Cerrar(sec);
+Fin_accion.
+
+-------------------------------------------------------------------------------------------
+Se dispone de una secuencia de caracteres y se desea obtener una secuencia de salida que resulte
+ de copiar la secuencia de entrada, descartando el caracter "$".
+
+Accion ejercicio 2.1.3 es
+    Ambiente
+        sec,salida : secuencia de caracteres;
+        v,s : caracter;
+Proceso
+    Arr(sec);
+    Crear(salida);
+    Avz(sec,v);
+    Mientras (NFDS(sec)) hacers
+        Si (v <> '$') entonces
+            s := v;
+           Escribir(salida,s);
+        Fin_si;
+        Avz(sec,v);
+    Fin_mientras;
+    Cerrar(salida); //Se termina de tratar a la secuencia de salida como escritura
+    Arr(salida); // Se la trata como una secuencia de lectura
+    Avz(salida,s);
+    Mientras (NFDS(salida)) hacer
+        Escribir('La secuencia de salidad es ', s);
+        Avz(salida,s);
+    Fin_mientras;
+    Cerrar(salida);
+    Cerrar(sec);
+Fin_accion.
+
+-----------------------------------------------------------------------------------------------
+

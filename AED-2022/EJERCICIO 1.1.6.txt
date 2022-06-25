@@ -1,0 +1,20 @@
+Proceso sin_titulo
+	definir valor1,valor2,valor3 como real;
+	Leer valor1;
+	Leer valor2;
+	Leer valor3;
+	SI (valor1 > valor2) Y (valor2 > valor3) ENTONCES
+		Escribir  'El mayor es ', valor1 , ' el mediano es ', valor2 , ' y el menor es ', valor3;
+	SINO
+	SI (valor2 > valor3) Y (valor1 > valor3) ENTONCES
+		ESCRIBIR 'El mayor es ', valor2 , ' el mediano es ', valor1 , ' y el menor es ', valor3;
+		SINO
+			SI (valor3 > valor1) Y (valor1 > valor2) ENTONCES
+				ESCRIBIR 'El mayor es ',valor3, ' el mediano es ', valor1, ' y el menor es ', valor2;
+			SINO
+				ESCRIBIR 'El mayor es ',valor1, ' el mediano es ', valor3, ' y el menor es ', valor2;
+			FINSI
+		FINSI
+	FINSI
+
+FinProceso

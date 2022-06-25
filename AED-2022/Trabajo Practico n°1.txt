@@ -1,0 +1,733 @@
+
+/*=============================================
+=            Ejercicio 1.1.1            =
+=============================================*/
+Encuentre el valor de la variable RESULT después de la ejecución de las siguientes secuencias de operaciones. Realizar prueba de escritorio.
+
+RESULT := 5 + 2**3*2;
+
+X := 2; Y := 3;
+RESULT := X**Y - X;
+
+UNO := 10; DOS := 200;
+RESULT := ABSO (UNO - DOS);
+UNO := TRUNC ( RESULT / 3 ) - UNO ** 2;
+RESULT := (DOS - UNO) * 2;
+
+VBLE1 := 10; VBLE2 := 3;
+RESULT := TRUNC (VBLE1 / VBLE2);
+VBLE1 := VBLE1 + VBLE2;
+RESULT := ABSO (VBLE2 - VBLE1) ** 2;
+RESULT := RESULT * 0,1;
+
+X := 10; RESULT := 3;
+TRES := ABSO (RESULT - X) + 2 * RESULT;
+X := REDOND (TRES / 2);
+Z := X MOD RESULT;
+RESULT := (2*(-5) + X)**2;
+
+UNO := 1; DOS := 2; TRES := 4;
+DOS := ABSO (UNO - TRES);
+RESULT := DOS * TRES;
+
+link: https://docs.google.com/spreadsheets/d/1elEszv7oIa2oSoJFmHpSKTC-0OMMmRDMAAHUjmW5rUk/edit?usp=sharing
+
+/*=====  Fin de Ejercicio 1.1.1  ======*/
+
+/*=======================================
+=            Ejercicio 1.1.2            =
+=======================================*/
+
+Indique en cuáles de los siguientes pares es importante el orden de los enunciados. Es decir, que si se modifica el orden de ellos cambian los resultados (supóngase X<>Y, Y<>Z, Z<>X). Justifique su respuesta
+
+
+X := Y
+Y := Z 
+
+X := Y
+Z := X
+
+X := Z    
+X := Y
+
+Z := Y
+X := Y
+
+Hasta cierto punto los valores se modificaron, pero al asignar Y := Z en la linea 45 todos las variables en adelante ya no se pueden modificar porque todas valen Z
+
+
+/*=====  End of Ejercicio 1.1.2  ======*/
+
+
+/*======================================
+=            Ejercico 1.1.3            =
+======================================*/
+
+
+
+/*=====  End of Ejercico 1.1.3  ======*/
+
+
+/*=========================================
+=            Ejercicio 1.1.5.1            =
+=========================================*/
+
+Escribir un programa que permita calcular el precio de un artículo para un año dado, considerando que la inflación es del 4 por 100 anual.
+
+La fórmula del precio es: P = C * (1 + R) ^ (N - A)
+
+C - Precio actual.
+N - Año futuro.
+R - Tasa de Inflación.
+A - Año actual.
+
+
+ACCION articulo_para_anio ES
+	AMBIENTE
+	C,R,P: Real;
+	N,A: Entero;
+PROCESO
+ESCRIBIR("Este algoritmo permite calcular el precio de un artículo para un año dado");
+ESCRIBIR("Ingrese el precio actual, año futuro y el año actual");
+LEER(C,N,A);
+ESCRIBIR("Ingrese la tasa de inflación. Ejemplo 3.2");	
+LEER(R);
+P :=  C * (1 + R) ** (N - A);
+
+ESCRIBIR("El precio del articulo por el año dado es ", P);
+
+FIN_ACCION.
+
+/*=====  End of Ejercicio 1.1.5.1  ======*/
+
+
+/*=========================================
+=            Ejercicio 1.1.5.2            =
+=========================================*/
+
+
+
+/*=====  End of Ejercicio 1.1.5.2  ======*/
+
+/*=======================================
+=            Ejercicio 1.1.6            =
+=======================================*/
+
+Escriba un algoritmo que permita ingresar 3 valores numéricos y determine cuál es el mayor, el medio y el menor
+
+ACCION mayorMedianoMenor ES
+	AMBIENTE
+	valor1,valor2,valor3: REAL;
+PROCESO
+ESCRIBIR('Programa que permite ingresar 3 valores numéricos y determine cuál es el mayor, el medio y el menor');
+ESCRIBIR('Ingrese 3 valores');
+LEER(valor1,valor2,valor3);
+SI (valor1 = valor2) O (valor2 = valor3) ENTONCES
+	ESCRIBIR('No se puede determinar quien es el mayor, mediano y menor. Por favor vuelva a ingresar los valores')
+CONTRARIO
+	SI (valor1 > valor2) Y (valor2 > valor3) ENTONCES
+	ESCRIBIR('El mayor es ', valor1 , ' el mediano es ', valor2 , ' y el menor es ', valor3)
+CONTRARIO
+	SI (valor2 > valor3) Y (valor1 < valor3) ENTONCES
+		ESCRIBIR('El mayor es ', valor2 , ' el mediano es ', valor3 , ' y el menor es ', valor1)
+	CONTRARIO
+			SI (valor3 > valor1) Y (valor1 > valor2) ENTONCES
+				ESCRIBIR('El mayor es ', valor3 , ' el mediano es ', valor1 , ' y el menor es ', valor2)
+			CONTRARIO 
+				ESCRIBIR('El mayor es ',valor1, ' el mediano es ', valor3, ' y el menor es ', valor2)
+			FIN_SI
+		FIN_SI
+	FIN_SI	
+FIN_SI;
+
+FIN_ACCION.
+
+
+/*=====  End of Ejercicio 1.1.6  ======*/
+
+
+/*=======================================
+=            Ejercicio 1.1.7            =
+=======================================*/
+    Escriba un algoritmo que acepte dos números, 
+    calcule la suma e imprima el mensaje de acuerdo al resultado obtenido.
+
+    Tener en cuenta:
+    * Suma <= 50
+    * Suma > 50 y <= 100
+    * Suma > 100 y <= 200
+    * Suma > 200
+
+
+ 	ACCION sumaDeNumeros ES
+	 		AMBIENTE
+	 		 a,b,suma: entero;
+	    PROCESO
+	    ESCRIBIR("Suma de numeros y vea su resultado");
+	    ESCRIBIR('Ingrese el valor 1 y valor 2');
+	    LEER(a,b);
+	    suma := a + b; 
+	    SI (suma <= 50) ENTONCES
+	        ESCRIBIR('El resultado obtenido ', suma , ' es menor o igual a 50')
+	    CONTRARIO
+	        SI (suma > 50 y suma <= 100) ENTONCES
+	            ESCRIBIR('El resultado obtenido ', suma , ' es mayor a 50 y menor o igual a 100')
+	        CONTRARIO
+	            SI (suma > 100 y suma <= 200) ENTONCES
+	                ESCRIBIR('El resultado obtenido', suma , ' es mayor 100 y menor o igual a 200');
+	            CONTRARIO
+	                ESCRIBIR("El valor es mayor a 200");
+	            FIN_SI
+	        FIN_SI
+	    FIN_SI;
+ 	FIN_ACCION.
+ 	
+ 
+/*=====  End of Ejercicio 1.1.7  ======*/
+
+/*=======================================
+=            Ejercicio 1.1.8            =
+=======================================*/
+
+
+
+/*=====  End of Ejercicio 1.1.8  ======*/
+
+/*=======================================
+=            Ejercicio 1.1.9            =
+=======================================*/
+
+Una persona decide realizar un viaje a Europa, para lo cual necesita una determinada cantidad de euros.
+La persona tiene ahorrada una cierta suma en dólares y desea saber si es suficiente y, en caso de haber diferencia (de más o de menos) a cuantos pesos equivale.
+Realice un algoritmo que solucione el problema, para lo cual deberá prever que se ingresen las equivalencias de monedas que considere necesarias 
+(por ejemplo la cotizacion en pesos de dólar y/o del euro, o a cuantos euros equivale un dólar).
+
+ACCION equivalencias ES
+    AMBIENTE
+    cantidad,resultado: real;
+    tipo_moneda,moneda_a_pasar: caracter;
+PROCESO
+    ESCRIBIR("Equivalencias de monedas");
+    ESCRIBIR("");
+    ESCRIBIR("Ingrese el tipo de moneda que tiene: pesos,dolares,euros");
+    LEER(tipo_moneda);
+    ESCRIBIR("Ingrese cantidad");
+    ESCRIBIR("Introduzca a que tipo de moneda va pasar: pesos,dolares,euros");
+    LEER(moneda_a_pasar);
+    SI (tipo_moneda = "pesos") y (moneda_a_pasar = "dolar")  ENTONCES
+        resultado := cantidad * 93.72
+        ESCRIBIR(cantidad."$ es igual a ". resultado." USD")
+    FIN_SI;
+       SI (tipo_moneda = "pesos") y (moneda_a_pasar = "dolar")  ENTONCES
+        resultado := cantidad * 93.72
+        ESCRIBIR(cantidad."$ es igual a ". resultado." USD")
+    FIN_SI;
+   SI (tipo_moneda = "pesos") y (moneda_a_pasar = "dolar")  ENTONCES
+        resultado := cantidad * 93.72
+        ESCRIBIR(cantidad."$ es igual a ". resultado." USD")
+    FIN_SI;
+FIN_ACCION
+
+/*=====  End of Ejercicio 1.1.9  ======*/
+
+/*========================================
+=            Ejercicio 1.1.10            =
+========================================*/
+Dados dos números enteros A y B generar un algoritmo que permita determinar si A es divisor de B o B es divisor de A
+
+ACCION divisor ES
+	AMBIENTE
+	a,b: real;
+PROCESO
+	ESCRIBIR('Ingrese dos numeros y verifique si son divisores');
+	LEER(a,b);
+	SI (a MOD b = 0) o (b MOD a = 0) ENTONCES
+		ESCRIBIR('Ambos son divisibles')
+	CONTRARIO
+		ESCRIBIR('Ninguno es divisible')
+	FIN_SI;
+FIN_ACCION.
+
+/*=====  End of Ejercicio 1.1.10  ======*/
+
+/*========================================
+=            Ejercicio 1.1.11            =
+========================================*/
+Dado un año ingresado por el usuario, emitir el mensaje 'ACTUAL' si corresponde al año en curso, 'PASADO' si es menor y 'FUTURO' si es mayor.
+	
+	ACCION anioEnCurso ES
+		AMBIENTE
+			anio: entero;
+		Constantes
+			anioActual = 2022;
+	PROCESO
+		ESCRIBIR('Ingrese un año y verifique si corresponde al año en curso');
+		LEER(anio);
+		SEGÚN anio HACER
+		  > anioActual : ESCRIBIR('FUTURO')
+		  < anioActual : ESCRIBIR('PASADO')
+		  = OTROS: ESCRIBIR('ACTUAL')
+		FIN_SEGÚN;
+	FIN_ACCION.
+
+/*=====  End of Ejercicio 1.1.11  ======*/
+
+
+/*========================================
+=            Ejercicio 1.1.12            =
+========================================*/
+Escriba un algoritmo que acepte un número entero mayor a 100 y menor a 1000, y muestre como está compuesto (unidades, decenas y centenas) y si es múltiplo de 3 (Recordar: todo número cuya suma de sus dígitos sea múltiplo de 3, lo es también).
+
+
+ACCION numeroCompuesto ES
+	AMBIENTE
+		numero, unidad , decena , centena , suma : entero;
+PROCESO
+	ESCRIBIR('Ingrese un numero mayor a 100 y menor a 1000 y vea como esta compuesto');
+	LEER(numero);
+
+	SI (numero = '') ENTONCES
+		ESCRIBIR('Introduzca un numero nuevamente');
+	CONTRARIO
+		SI (numero > 100 ) y (numero < 1000) ENTONCES
+			centena := numero DIV 100
+      		decena  := TRUNC(numero / 10) MOD 10
+      		unidad  := numero MOD 10
+      		suma := centena + decena + unidad
+			ESCRIBIR('El numero esta compuesto por ', centena, ' de 100, por ', decena, ' de 10 y ', unidad, ' de 1')
+		CONTRARIO
+			ESCRIBIR('Vuelva a ingresar otro numero que sea mayor a 100 y menor a 100')
+		FIN_SI;
+	FIN_SI;
+	SI (suma MOD 3 = 0) ENTONCES
+		ESCRIBIR('La suma de sus digitos es multiplo de 3')
+	CONTRARIO
+		ESCRIBIR('La suma de sus digitos no es multiplo de 3')
+	FIN_SI;
+FIN_ACCION.
+
+/*=====  End of Ejercicio 1.1.12  ======*/
+
+/*========================================
+=            Ejercicio 1.1.13            =
+========================================*/
+Escriba un algoritmo que acepte un número entero mayor a 100 y menor a 1000 que representa una suma de
+dinero e indique cuantos billetes de cada denominación necesita, suponiendo que solo existen billetes de 100, 10 y 1
+peso.
+
+ACCION compruebaBilletes ES
+    AMBIENTE
+    valor,billete100,billete10,peso: entero;
+PROCESO
+    Escribir("Ingrese un monto y vea cuantos billetes necesita");
+    Leer(valor);
+    SI ( valor > 100 ) y ( valor < 1000) ENTONCES
+        billete100 := valor DIV 100;
+        billete10 := TRUNC(valor / 10) MOD 10;
+        peso := valor MOD 10;
+        Escribir("Se necesita ".billete100." de 100 ".billete10." de 10"." y ".peso. " de 1 ");
+    CONTRARIO
+        Escribir("Porfavor ingrese un nuevo valor por favor")
+    FIN_SI;
+
+FIN_ACCION.
+
+/*=====  End of Ejercicio 1.1.13  ======*/
+
+/*========================================
+=            Ejercicio 1.1.15            =
+========================================*/
+
+a) Hacer un algoritmo que calcule la altura aproximada de un edificio en pies, ingresando como dato la cantidad de pisos del mismo y la altura promedio de cada piso, en metros. (1 m = 3.28 pies)
+b) Modifique el algoritmo del punto a) para que permita calcular la altura de 50 edificios.
+c) Modifique el algoritmo del punto a) para que permita calcular la altura de una cantidad indeterminada de edificios. Prevea una condición de fin.
+
+ACCION calculoAltura ES
+	AMBIENTE
+		cantidad_pisos: entero;
+		pies = 3.28;
+PROCESO
+			Escribir("Este algoritmo calcula a altura de un edificio en pies");
+			Escribir('Ingrese cantidad de pisos')
+            Leer(cantidad_pisos);
+            Escribir("Ingrese la altura promedio de cada piso");
+            Leer(altura);
+            alturaEdificio := (cantidad_pisos * altura) * pies;
+            Escribir("La altura total del edificio es de: ", alturaEdificio, " pies.");
+FIN_ACCION.
+
+Accion calculoAltura1 es
+    Ambiente
+        cantidad_pisos,i: entero;
+        alturaEdificio,altura: real;
+        pies = 3.28; <----------- Constante
+    Proceso
+        Escribir("Este algoritmo calcula a altura de un edificio en pies");
+        Para i := 1 a 50 hacer
+            Escribir("Ingrese la cantidad de pisos del edificio: ",i);
+            Leer(cantidad_pisos);
+            Escribir("Ingrese la altura promedio de cada piso");
+            Leer(altura);
+            alturaEdificio := (cantidad_pisos * altura) * pies;
+            Escribir("La altura total del edificio es de: ", alturaEdificio, " pies.");
+        Fin_Para;
+
+Fin_Accion;
+----------------------------------------------------------------------------
+----Primera Forma de realizar----
+
+Accion calculoAltura2 es
+    Ambiente
+        cantidad_pisos,i: entero;
+        op,opcalcular: ("s","n");
+        alturaEdificio,altura: real;
+        pies = 3.28; <----------- Constante
+    Proceso
+        Escribir("Este algoritmo calcula a altura de un edificio en pies");
+        Escribir("¿Desea calcular la altura del edificio en pies?");
+        Leer(opcalcular);
+        Si (opcalcular = 's') Entonces
+             i := 1
+        Repetir
+            Escribir("Ingrese la cantidad de pisos del edificio: ",i)
+            Leer(cantidad_pisos)
+        
+            Escribir("Ingrese la altura promedio de cada piso")
+            Leer(altura)
+
+            alturaEdificio := (cantidad_pisos * altura) * pies;
+
+            Escribir("La altura total del edificio es de: ", alturaEdificio, " pies.")
+            i := i + 1
+            Escribir("Desea continuar")
+            Leer(op)
+        Hasta que op = 'n';
+        Fin_Si;
+
+        
+Fin_Accion;
+--------------------------------------------------------------------------------
+--- Segunda Forma --- 
+Accion calculoAlura3 es
+    Ambiente
+        cantidad_pisos,i: entero;
+        opcalcular: ("s","n");
+        alturaEdificio,altura: real;
+        pies = 3.28; <----------- Constante
+    Proceso
+        Escribir("Este algoritmo calcula a altura de un edificio en pies");
+        Escribir("¿Desea calcular la altura del edificio en pies?");
+        Leer(opcalcular);
+        i := 1;
+        Mientras opcalcular = 's' hacer 
+                Escribir("Ingrese la cantidad de pisos del edificio: ",i);
+                Leer(cantidad_pisos);
+                Escribir("Ingrese la altura promedio de cada piso");
+                Leer(altura);
+                alturaEdificio := (cantidad_pisos * altura) * pies;
+                Escribir("La altura total del edificio es de: ", alturaEdificio, " pies.");
+                i := i + 1;
+                Escribir("Desea continuar");
+                Leer(opcalcular);
+        Fin_Mientras;
+Fin_Accion;
+
+/*=====  End of Ejercicio 1.1.15  ======*/
+
+/*========================================
+=            Ejercicio 1.1.16            =
+========================================*/
+
+    Diseñe un algoritmo que obtenga el porcentaje de alumnos de ISI, IQ e IEM, sobre el total de egresados de la UTN-FRRe de un año.
+    Modifique el algoritmo del punto 1. para que permita obtener e informar los mismos porcentajes pero para varias Facultades y al final emitir el total de alumnos por carrera y total general.
+
+Accion porcentajeCarrera Es
+	Ambiente
+	alumnosISI,alumnosIQ,alumnosIEM, totalegresados,aniodeegresados: entero:
+	porcentajeISI,porcentajeIQ,porcentajeIEM: real;
+
+Proceso
+
+	Escribir("Porcentaje de alumnos en las carreras");
+	Escribir("Ingrese el total de egresados de un anio");
+	Leer(totalegresados);
+	Escribir("Ingrese cantidad de alumnos de ISI");
+	Leer(alumnosISI);
+	Escribir("Ingrese cantidad de alumnos de IQ");
+	Leer(alumnosIQ);
+	Escribir("Ingrese cantidad de alumnos de IEM");
+	Leer(alumnosIEM);
+
+	porcentajeISI := (alumnosISI * totalegresados)/100;
+	porcentajeIQ := (alumnosIQ * totalegresados)/100;
+	porcentajeIEM := (alumnosIEM * totalegresados)/100;
+
+	Escribir("El porcentaje dealumnos de ISI es de: ", porcentajeISI);
+	Escribir("El porcentaje dealumnos de IQ es de: ", porcentajeIQ);
+	Escribir("El porcentaje dealumnos de IEM es de: ", porcentajeIEM);
+
+Fin_Accion
+-----------------------------------------------------------------------------
+Accion porcentajeCarrera Es
+	Ambiente
+	alumnosISI,alumnosIQ,alumnosIEM, totalegresados,i,cant_facultades,totalISI,totalIEM,totalIQ,totalgeneral: entero:
+	porcentajeISI,porcentajeIQ,porcentajeIEM: real;
+	op:("s","n");
+
+Proceso
+	Escribir("Porcentaje de alumnos en las carreras");
+	Escribir("¿Desea calcular varias facultades? Ingrese S o N segun la opcion que desee");
+	Leer(op);
+	Si (op = 's') Entonces
+		i := 0
+		totalISI := 0
+		totalIEM := 0
+		totalIQ  := 0
+		Repetir 
+			Escribir("Ingrese cantidad de facultades que desea calcular")
+			Leer(cant_facultades)
+			Escribir("Ingrese el total de egresados de un anio")
+			Leer(totalegresados)
+			Escribir("Ingrese cantidad de alumnos de ISI")
+			Leer(alumnosISI)
+			Escribir("Ingrese cantidad de alumnos de IQ")
+			Leer(alumnosIQ)
+			Escribir("Ingrese cantidad de alumnos de IEM")
+			Leer(alumnosIEM)
+
+			porcentajeISI := (alumnosISI*totalegresados)/100
+			porcentajeIQ  := (alumnosIQ*totalegresados)/100
+			porcentajeIEM := (alumnosIEM*totalegresados)/100
+
+			Escribir("El porcentaje dealumnos de ISI es de: ", porcentajeISI)
+			Escribir("El porcentaje dealumnos de IQ es de: ", porcentajeIQ)
+			Escribir("El porcentaje dealumnos de IEM es de: ", porcentajeIEM)
+
+			i := i + 1
+			totalISI := totalISI + alumnosISI
+			totalIEM := totalIEM + alumnosIEM
+			totalIQ  := totalIQ + alumnosIQ
+
+		Hasta que i = cant_facultades;
+
+		totalgeneral := totalISI + totalIEM + totalIQ
+
+		Escribir("El total de alumnos de ISI es de: ",totalISI)
+		Escribir("El total de alumnos de IEM es de: ",totalIEM)
+		Escribir("El total de alumnos de IQ es de: ",totalIQ)
+		Escribir("El total de alumnos es de: ",totalgeneral)
+
+	Contrario
+			Escribir("Ingrese el total de egresados de un anio");
+			Leer(totalegresados);
+			Escribir("Ingrese cantidad de alumnos de ISI");
+			Leer(alumnosISI);
+			Escribir("Ingrese cantidad de alumnos de IQ");
+			Leer(alumnosIQ);
+			Escribir("Ingrese cantidad de alumnos de IEM");
+			Leer(alumnosIEM);
+
+
+			porcentajeISI:=(alumnosISI*totalegresados)/100;
+			porcentajeIQ:=(alumnosIQ*totalegresados)/100;
+			porcentajeIEM:=(alumnosIEM*totalegresados)/100;
+
+			Escribir("El porcentaje dealumnos de ISI es de: ", porcentajeISI);
+			Escribir("El porcentaje dealumnos de IQ es de: ", porcentajeIQ);
+			Escribir("El porcentaje dealumnos de IEM es de: ", porcentajeIEM);
+	Fin_Si; 	
+Fin_Accion
+
+------------------------------------------------------------------------------------------------------------------
+Accion porcentajeCarrera Es
+	Ambiente
+	alumnosISI,alumnosIQ,alumnosIEM, totalegresados,i,cant_facultades,totalISI,totalIEM,totalIQ,totalgeneral: entero:
+	porcentajeISI,porcentajeIQ,porcentajeIEM: real;
+	op:("s","n");
+
+Proceso
+
+	Escribir("Porcentaje de alumnos en las carreras y total de alumnos por carrera en distintas facultades");
+	i := 0;
+	totalISI := 0;
+	totalIEM := 0;
+	totalIQ := 0;
+		Repetir 
+			Escribir("Ingrese cantidad de facultades que desea calcular");
+			Leer(cant_facultades);
+
+			Escribir("Ingrese el total de egresados de un anio");
+			Leer(totalegresados);
+
+			Escribir("Ingrese cantidad de alumnos de ISI");
+			Leer(alumnosISI);
+
+			Escribir("Ingrese cantidad de alumnos de IQ");
+			Leer(alumnosIQ);
+
+			Escribir("Ingrese cantidad de alumnos de IEM");
+			Leer(alumnosIEM);
+
+			porcentajeISI := (alumnosISI*totalegresados) / 100
+			porcentajeIQ  := (alumnosIQ*totalegresados) / 100
+			porcentajeIEM := (alumnosIEM*totalegresados) / 100
+
+			Escribir("El porcentaje dealumnos de ISI es de: ", porcentajeISI)
+			Escribir("El porcentaje dealumnos de IQ es de: ", porcentajeIQ)
+			Escribir("El porcentaje dealumnos de IEM es de: ", porcentajeIEM)
+
+			i := i + 1
+			totalISI := totalISI + alumnosISI
+			totalIEM := totalIEM + alumnosIEM
+			totalIQ  := totalIQ + alumnosIQ
+		Hasta que i = cant_facultades;
+
+		totalgeneral := totalISI + totalIEM + totalIQ;
+
+		Escribir("El total de alumnos de ISI es de: ",totalISI);
+		
+		Escribir("El total de alumnos de IEM es de: ",totalIEM);
+
+		Escribir("El total de alumnos de IQ es de: ",totalIQ)
+
+		Escribir("El total de alumnos es de: ",totalgeneral);
+		
+Fin_Accion
+
+
+/*=====  End of Ejercicio 1.1.16  ======*/
+
+/*========================================
+=            Ejercicio 1.1.17            =
+========================================*/
+Elabore un algoritmo que calcule el producto de dos enteros A y B empleando sólo la operación suma.
+
+
+Accion calculoProductoSuma es 
+    Ambiente
+    a,b,sumaAyB,i: entero;
+Proceso
+        Escribir("Ingrese los valores a calcular");
+        Leer(a,b);
+        sumaAyB := 0;
+        Para i := 1 hasta b hacer
+            sumaAyB := sumaAyB + a
+            Escribir(sumaAyB)
+        Fin_Para;
+Fin_Accion.
+
+Contador : i:= i + 1 <--------- contabilizando en uno;
+Acumulador: resultado:=resultado+a <------- Guardamos la variable de a en resultado, 
+Los acaumuladores se inicializan en 0 fuera de la iteración a realizar;
+
+/*=====  End of Ejercicio 1.1.17  ======*/
+
+/*========================================
+=            Ejercicio 1.1.18            =
+========================================*/
+Elabore un algoritmo que calcule el cociente de dos enteros F y G y el Resto de la operación, empleando sólo las operaciones suma y diferencia.
+
+ACCION NombreDePrograma ES
+	AMBIENTE
+		f,g,resto,cociente: entero
+PROCESO
+	ESCRIBIR('Calcule el cociente de dos enteros F y G');
+	LEER(f,g);
+	MIENTRAS f >= g HACER
+		f := f - g
+		cociente := cociente + 1;
+	FIN_MIENTRAS;
+	resto := f;
+	ESCRIBIR('El cociente entre ambos numeros es de ', cociente , ' y su resto es de ', resto);
+FIN_ACCION.
+
+/*=====  End of Ejercicio 1.1.18  ======*/
+
+/*========================================
+=            Ejercicio 1.1.19            =
+========================================*/
+Escribir un algoritmo que ingrese una variable V y emita el valor de ésta, su cuadrado y su cubo.
+
+Accion cuboCuadrado Es
+    Ambiente
+    v,cuadrado,cubo: entero;
+Proceso
+    Escribir("Ingrese un valor y ecuentre su cuadrado y su cubo");
+    Leer(v);
+    cuadrado := v**2;
+    cubo := v**3;
+    Escribir("El cuadrado de ",v," es ",cuadrado);
+    Escribir("El cubo de ",v," es ",cubo);
+Fin_Accion;
+
+/*=====  End of Ejercicio 1.1.19  ======*/
+
+/*========================================
+=          Ejercicio 1.1.19            =
+========================================*/
+Escribir un algoritmo que ingrese una variable V y emita el valor de ésta, su cuadrado y su cubo.
+
+Accion cuadradoCubo Es
+    Ambiente
+    v,cuadrado,cubo: entero;
+Proceso
+    Escribir("Ingrese un valor y ecuentre su cuadrado y su cubo");
+    Leer(v);
+    cuadrado := v**2;
+    cubo := v**3;
+    Escribir("El cuadrado de ",v," es ",cuadrado);
+    Escribir("El cubo de ",v," es ",cubo);
+Fin_Accion;
+
+
+/*=====  End oEjercicio 1.1.19  ======*/
+
+/*========================================
+=            Ejercicio 1.2.11            =
+========================================*/
+Diseñe un algoritmo que muestre un menú con las opciones sumar, restar, multiplicar y dividir, el algoritmo solicitará una opción y realizará la tarea elegida, se debe usar un procedimiento para mostrar el menú, pedir los datos en el algoritmo principal y después usar funciones para realizar los cálculos.
+
+ACCION NombreDePrograma ES
+	AMBIENTE
+		opcion: ('+','-','*','/');
+		valor1,valor2,resultado : real;
+		PROCEDIMIENTO opcionesMenu() ES
+			SEGÚN opcion HACER
+			  = '+' : suma(valor1, valor2);
+			  = '-' : resta(valor1, valor2);
+			  = '*' : multiplicacion(valor1, valor2);
+			  = '/' : division(valor1, valor2);
+			FIN_SEGÚN;
+		FIN_PROCEDIMIENTO;
+
+		FUNCION suma(a,b: real): real
+			suma := a + b;
+		FIN_FUNCIÓN;
+
+		FUNCION resta(a,b: real): real
+			resta := a - b;
+		FIN_FUNCIÓN;
+
+		FUNCION multiplicacion(a,b: real): real
+			multiplicacion := a * b;
+		FIN_FUNCIÓN;
+
+		FUNCION division(a,b): real
+			division := a / b;
+		FIN_FUNCIÓN		
+
+PROCESO
+	ESCRIBIR('Introduzca cualquiera de los siguientes simbolos para realizar las operaciones');
+	ESCRIBIR(' + : Suma ');
+	ESCRIBIR(' - : Resta');
+	ESCRIBIR(' * : Multiplicación');
+	ESCRIBIR(' / : División');
+	LEER(opcion);
+	ESCRIBIR('Ingrese 2 valores para realizar la operación');
+	LEER(valor1,valor2);
+	resultado := opcionesMenu();
+	ESCRIBIR('El resultado de la operación es ', resultado);
+FIN_ACCION.
+
+
+/*=====  End of Ejercicio 1.2.11  ======*/
