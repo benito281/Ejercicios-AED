@@ -1,0 +1,21 @@
+Dada una secuencia de letras del alfabeto que finaliza con una marca '*',
+ contar cuantas letras "A" hay en la secuencia.
+
+ Accion ejercicio 2.1.1 es
+     Ambiente
+         sec  : secuencia de caracteres;
+         v    : caracter;
+         cont :  entero;
+ Proceso
+     Arr(sec);
+     cont := 0;
+     Avz(sec,v);
+     Mientras (v <> '*') hacer
+         Si (v = 'A') entonces
+             cont := cont + 1;
+         Fin_si;
+         Avz(sec,v);
+     Fin_mientras;
+    Escribir('La cantidad de letras A ', cont);
+    Cerrar(sec);
+ Fin_accion.
