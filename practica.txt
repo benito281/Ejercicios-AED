@@ -1,0 +1,25 @@
+Accion act1 es
+    Ambiente
+        sec : secuencia de caracteres;
+        v : caracter
+
+        Procedimiento inicializarSecuencia(varSec: secuencia de caractere)
+            Arr(varsec);
+        Fin_procedimiento;
+Proceso
+    inicializarSecuencia(sec)
+    cont := 0;
+    Avz(sec,v);
+    Mientras (v <> '*') hacer
+        Si (v = 'A' o v = 'a') entonces
+            cont := cont + 1;
+            Avz(sec,v);
+        Si No
+            Avz(v);
+        Fin_si;
+    Fin_mientras;
+
+    Escribir('La cantidad de A contadas es :', cont);
+
+    Cerrar(sec, v);
+Fin_accion.
